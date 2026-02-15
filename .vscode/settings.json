@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^docker compose down$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}
