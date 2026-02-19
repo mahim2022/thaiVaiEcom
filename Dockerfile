@@ -17,5 +17,5 @@ COPY . .
 # Expose the port Medusa runs on
 EXPOSE 9000 5173
 
-# Start with migrations and then the development server
-CMD ["./start.sh"]
+# Normalize line endings and start with migrations, then dev server
+CMD ["sh", "-c", "sed -i 's/\\r$//' ./start.sh && chmod +x ./start.sh && ./start.sh"]

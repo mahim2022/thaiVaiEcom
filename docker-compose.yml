@@ -49,6 +49,12 @@ services:
       - /server/node_modules
     networks:
       - medusa_network
+    healthcheck:
+      test: ["CMD", "nc", "-z", "localhost", "9000"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
 
   storefront:
     build:
@@ -68,6 +74,7 @@ services:
     volumes:
       - ./my-medusa-storefront:/app
       - /app/node_modules
+      - /app/.next
     networks:
       - medusa_network
 

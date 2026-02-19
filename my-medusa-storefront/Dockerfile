@@ -2,16 +2,21 @@ FROM node:20-alpine
 
 WORKDIR /app
 
-COPY package.json package-lock.json ./
-# RUN npm ci
-RUN npm install
+# Copy package manager files
+COPY package.json yarn.lock .yarnrc.yml ./
+COPY .yarn/releases .yarn/releases
 
+# Install dependencies
+RUN yarn install
+
+# Copy source code
 COPY . .
 
-RUN npm run build
+# Build the application
+RUN yarn build
 
 EXPOSE 8000
 
-# CMD ["npm", "start"]
-CMD ["npm", "run", "dev"]
+CMD ["yarn", "start"]
 
+    
