@@ -24,10 +24,10 @@
     "docker:down": "docker compose down"
   },
   "dependencies": {
-    "@medusajs/admin-sdk": "2.13.1",
-    "@medusajs/cli": "2.13.1",
-    "@medusajs/framework": "2.13.1",
-    "@medusajs/medusa": "2.13.1"
+    "@medusajs/admin-sdk": "2.13.2",
+    "@medusajs/cli": "2.13.2",
+    "@medusajs/framework": "2.13.2",
+    "@medusajs/medusa": "2.13.2"
   },
   "devDependencies": {
     "@medusajs/test-utils": "2.13.1",
